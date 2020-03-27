@@ -32,12 +32,14 @@ To create webcasts, there is only a few simple steps:
   * Upload and share your final webcast
 
 
-Download
-########
+Installation
+############
 
 The scripts used to create the webcasts can be obtained from `GitHub <https://github.com/tillbiskup/tiny-webcasts>`_.
 
 Check the :doc:`requirements page <requirements>` for additional programs necessary and how to install them.
+
+For :doc:`installing <installation>` the scripts there are a few hints and there exists even an installer script for your convenience.
 
 
 Where to start
