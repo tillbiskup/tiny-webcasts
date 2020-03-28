@@ -9,6 +9,14 @@ tempWave=${tempDir}/${fileName}.wav
 tempFLAC=${tempDir}/${fileName}.flac
 tempFLAC2=${tempDir}/${fileName}.2.flac
 
+# Check for correct name of normalize-audio
+if command -v normalize-audio >/dev/null 2>&1
+  then
+    normalize="normalize-audio"
+else
+    normalize="normalize"
+fi
+
 
 inputPeak=`sox ${fileName} -n stat 2>&1 | grep 'Volume adjustment' | perl -pe 's/^.*(\d+\.\d+).*$/$1/sg'`
 inputGain=`echo "0.707 * ${inputPeak}" | bc -l`
@@ -34,7 +42,7 @@ echo "ReplayGain: " ${replayGain} " dB"
 
 flac -d -f -s -o ${tempWave} ${tempFLAC2}
 rm ${tempFLAC2}
-normalize-audio -g"${replayGain}dB" ${tempWave}
+${normalize} -g"${replayGain}dB" ${tempWave}
 #lame --silent --preset sw ${tempWave} ${targetFile}
 ffmpeg -i  ${tempWave} -c:a aac -b:a 24k ${targetFile}
 rm ${tempWave}

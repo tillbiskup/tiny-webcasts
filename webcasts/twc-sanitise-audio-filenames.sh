@@ -6,8 +6,8 @@
 k=0;
 for oldfile in `ls *wav`
   do
-    newfile=`echo ${oldfile} |rev |cut -d- -f2- |rev`
-    newfile=${newfile}-$(printf "%03d" $k).wav
+    #newfile=`echo ${oldfile} |rev |cut -d- -f2- |rev`
+    newfile=audio-$(printf "%03d" $k).wav
     echo "${oldfile} => ${newfile}"
     mv ${oldfile} ${newfile}
     k=$((k+1))
