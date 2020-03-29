@@ -1,5 +1,5 @@
 # vars
-inputPDF=$1
+inputPDF="$1"
 slidePrefix=slides
  
 ### convert input
@@ -7,7 +7,8 @@ slidePrefix=slides
 # width needs to be dividable by 2
 convert \
   -density 285.75 \
-  ${inputPDF} \
+  "${inputPDF}" \
   -quality 90 \
+  -geometry x1080 \
   ${slidePrefix}-%03d.jpg
 
