@@ -9,12 +9,16 @@ To create webcasts, there is only a few simple steps:
   #. Create the actual webcast
   #. Upload and share your webcast
 
-Be sure to at least once read through the details below to get an idea how to perform each of these steps.
+
+.. important::
+
+   Be sure to read through the details below at least once to get an idea how to perform each of these steps -- and to familiarise yourself with a few conventions that greatly simplify your life.
+
 
 A few important things for the impatient:
 
   * Be organised. Have a concise naming scheme for your files.
-  * Always backup your recorded and cut audio files to a save place.
+  * Always backup your recorded and cut audio files to a save place -- *before* you run the scripts.
   * Execute the commands for creating the webcast exclusively on a *copy* of your cut audio files.
 
 
@@ -31,7 +35,7 @@ LaTeX together with the beamer class works perfect for this, but converting pres
 Record the audio for your presentation
 ======================================
 
-We recommend using `Audacity <https://www.audacityteam.org/>`_ for this task.
+We recommend using `Audacity <https://www.audacityteam.org/>`_ for this task. Have a look at the :doc:`short introduction <audacity>` if not already familiar with the program.
 
 A few tips and tricks from own experience, making post-processing your audio recording much easier (for you):
 
