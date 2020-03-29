@@ -22,12 +22,13 @@ This will create a `~/bin/` directory (if it doesn't already exist) and copy all
 
 Assume you have a presentation in PDF format with one page per slide/overlay, and a series of cut audio files corresponding to the slides. Then there are only three simple steps to create your webcast.
 
+
 ### Copy audio and PDF files to temporary directory
 
 This step is highly recommended, as the scripts will remove the raw files after processing them.
 
 ```bash
-twc-create-tmpdir.sh
+twc tmpdir
 ```
 
 
@@ -36,7 +37,7 @@ twc-create-tmpdir.sh
 Postprocess your audio files and create the audio and video trace for your webcast.
 
 ```bash
-twc-prepare-webcast.sh
+twc prepare
 ```
 
 Now, you will have to edit the metadata contained in the newly created file `meta.txt`:
@@ -53,7 +54,7 @@ Of course, you can use any text editor.
 And finally, you can create the webcast:
 
 ```bash
-twc-finalise-webcast.sh my_fancy_webcast.mp4
+twc finalise my_fancy_webcast.mp4
 ```
 
 That's it. Enjoy and share your tiny webcast.
