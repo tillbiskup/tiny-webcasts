@@ -183,7 +183,7 @@ First to the first block of metadata: "title", "artist", "date", and "track" sho
 
 All the other blocks, each starting with ``###[CHAPTER]``, are used to create bookmarks within your webcast. This is a very useful feature if you cover more than one topic in a single webcast, as it allows the listener to jump directly within the webcast. Generally, webcasts longer than a few minutes should always consist of several parts and hence have bookmarks set. However, if you don't want to bother, simply delete everything starting with the line ``1[CHAPTER]`` from your ``meta.txt`` file.
 
-Usually, a chapter consists of several slides, hence you need to manually remove some (or rather most of) the blocks starting with ``###[CHAPTER]``, where ``###`` denotes the slide number (for convenience). The final metadata file should look simliar to the following::
+Usually, a chapter consists of several slides, hence you need to manually remove some (or rather most of) the blocks starting with ``###[CHAPTER]``, where ``###`` denotes the slide number (for convenience). Important: You need to delete these numbers in front of the ``[CHAPTER]`` mark in your final ``meta.txt`` file. The final metadata file should look simliar to the following::
 
 	;FFMETADATA1
 	title=My fancy first webcast
