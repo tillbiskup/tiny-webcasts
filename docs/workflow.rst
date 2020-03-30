@@ -29,7 +29,7 @@ It doesn't matter what program(s) you are using to create your presentation. It 
 
 Stepwise uncovering of parts of the slide should end up in different pages of your resulting PDF file.
 
-LaTeX together with the beamer class works perfect for this, but converting presentations created with programs such as Microsoft PowerPoint or Apple Keynote into PDF files should do as well.
+`LaTeX <http://www.tug.org/begin.html>`_ together with the `beamer class <https://ctan.org/pkg/beamer>`_ works perfectly for this, but converting presentations created with programs such as Microsoft PowerPoint or Apple Keynote into PDF files should do as well.
 
 
 Record the audio for your presentation
@@ -59,9 +59,9 @@ Why snapping your fingers after each slide? Well, usually, we have problems list
 Cut the audio trace in pieces
 =============================
 
-Before you start cutting the audio trace, make sure to have a copy of it at a safe place.
+Before you start cutting the audio trace, make sure to have a copy of it in a safe place.
 
-Again, we recommend using `Audacity <https://www.audacityteam.org/>`_ for this task.
+Again, we recommend using `Audacity <https://www.audacityteam.org/>`_ for this task. Have a look at the :doc:`short introduction <audacity>` if not already familiar with the program.
 
   * Load the audio trace.
   * You will see the transitions between slides optically, as you have snapped your fingers.
@@ -100,7 +100,7 @@ These steps assume that you have a presentation in PDF format with one page per 
 
 .. warning::
 
-   Always **work on a copy of your audio files** stored in a temporary directory. The commands for creating the webcast will remove the original WAV files in between for a better overview. Read on for convenient ways to create such a temporary directory.
+   Always **work on a copy of your audio files** stored in a temporary directory. The commands for creating the webcast will remove the original WAV files in the working directory for a better overview. Read on for convenient ways to create such a temporary directory.
 
 
 Create a temporary directory
@@ -120,6 +120,8 @@ Ideally, the contents of this directory look similar to the following::
   audio-004.wav
   ...
   audio-nnn.wav
+
+It doesn't matter how you name your presentation, as long as you have only a single PDF file in the temporary directory. Furthermore, as long as your audio files are named in a consecutive way so that they are listed in the correct order (using the ``ls`` command), everything should be fine.
 
 Wonder why using three digits for numbering the audio files? From own experience, it can easily happen for a lecture of 45 minutes that you end up with more than 99 single slides, provided that you uncover content on a single slide in small steps. Remember: The number of slides appearing in your presentation is usually less than the actual number of slides you are showing if you uncover things stepwise.
 

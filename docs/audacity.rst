@@ -108,7 +108,7 @@ As mentioned, it comes in quite handy to have cut marks (by snapping your finger
 
 Furthermore, now you see the beauty of the controls on the lower part of the Audacity window for selecting your pieces of audio trace. Make sure to have selected "Start and Length of Selection" in order to easily set the length to multiples of 0.5 seconds. You can directly type in numbers here with your keyboard, making it quite simple and fast in routine operation.
 
-Next, select "File" > "Export" > "Export Selected Audio..." to export *only* the selection (in contrast to the whole trace) as WAV file. Again, a quite familiar window will open, cf. :numref:`fig-audaxity-export-selected-audio`. Make sure once again to have sensible names for your recording. The default, ``audio-001``, is not bad. Make sure to consecutively number your exported files.
+Next, select "File" > "Export" > "Export Selected Audio..." to export *only* the selection (in contrast to the whole trace) as WAV file. Again, a quite familiar window will open, cf. :numref:`fig-audacity-export-selected-audio`. Make sure once again to have sensible names for your recording. The default, ``audio-001``, is not bad. Make sure to consecutively number your exported files.
 
 
 .. _fig-audacity-export-selected-audio:
