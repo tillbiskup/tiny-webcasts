@@ -4,6 +4,11 @@ Details of the steps performed by the scripts
 For those interested in the details of what the two scripts described in the :doc:`workflow <workflow>` actually do, here is a more detailed list with some comments and explanations.
 
 
+.. note::
+
+   Currently, this section is not really up-to date. It will be updated soon and more details added.
+
+
 Split and convert the presentation
 ==================================
 

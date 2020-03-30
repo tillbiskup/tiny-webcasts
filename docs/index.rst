@@ -47,6 +47,8 @@ Where to start
 
 Still unsure whether this is something for you? See the :doc:`Who's the audience? <audience>` section. Ready to start? Have a look at the :doc:`requirements <requirements>` necessary to get started. And finally, have a look at the :doc:`workflow <workflow>` for creating webcasts.
 
+Those new to audacity but interested in using it may have a look at the :doc:`short introduction to audacity <audacity>`. And those already familiar but in need of a quick reminder how to create the webcasts may visit the :doc:`quick reference <quick>`.
+
 Have fun and share your knowledge!
 
 
@@ -71,4 +73,5 @@ This program is free software: you can redistribute it and/or modify it under th
    installation
    workflow
    audacity
+   quick
    details
