@@ -103,7 +103,7 @@ As mentioned, it comes in quite handy to have cut marks (by snapping your finger
 .. figure:: ./images/audacity-cut-marked-section.*
    :width: 100%
    
-   Fancy figure caption
+   Cut the audio trace by selecting parts of it and export the selection. it comes in quite handy to have cut marks (by snapping your fingers) optically visible on your audio trace. Note the controls on the lower part of the window helping with selecting pieces of your audio trace.
 
 
 Furthermore, now you see the beauty of the controls on the lower part of the Audacity window for selecting your pieces of audio trace. Make sure to have selected "Start and Length of Selection" in order to easily set the length to multiples of 0.5 seconds. You can directly type in numbers here with your keyboard, making it quite simple and fast in routine operation.
@@ -144,5 +144,5 @@ You may have noticed that there is no default keyboard shortcut for exporting th
 To add the desired keyboard shortcut, select the "Export Selected Audio..." menu entry and afterwards the text box left of the "Set" button. Type the keyboard shortcut you want to assign and afterwards press the "Set" button. As you see, here, we've used the ``Option`` + ``Cmd`` + ``E`` keyboard shortcut, quite similar to the one for exporting the whole audio trace.
 
 
-That's it for this short introduction to using Audacity for recording and cutting the audio for a webcast. Enjoy, play around, and share both, your webcasts and gaine knowledge with others.
+That's it for this short introduction to using Audacity for recording and cutting the audio for a webcast. Enjoy, play around, and share both, your webcasts and gained knowledge with others.
 
