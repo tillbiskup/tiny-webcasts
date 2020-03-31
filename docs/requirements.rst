@@ -82,6 +82,12 @@ All the other tools can be installed using `Homebrew <https://brew.sh/>`_, the f
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+
+.. note::
+
+   Homebrew requires the "Xcode Command Line Tools" (CLT) to be installed. This may therefore take some time, as unfortunately Xcode seems to be quite large a download (> 1 GB). Hence, if you don't have the Xcode CLT installed yet, expect a longer download time depending on your available bandwidth. However, you need to do that only once, and Homebrew is a very useful tool anyway.
+
+
 To get all the tools installed, paste the following lines right into the terminal::
 
   brew install ffmpeg
