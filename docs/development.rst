@@ -23,5 +23,9 @@ A few ideas how to develop the project further, currently a list as a reminder f
     
     * Web interface for convenient usage
 
-
+  * Different formats
+  
+    * Opus video codec: https://opus-codec.org/
+    
+    * List of MP3 files with cover images
 

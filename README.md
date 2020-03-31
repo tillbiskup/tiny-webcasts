@@ -7,6 +7,13 @@ A series of bash scripts using ffmpeg and other tools to create webcasts with sm
 All bash scripts reside in the `webcasts` directory. Documentation (using Sphinx and reStructuredText) can be found in the `docs` directory.
 
 
+## Requirements/Dependencies
+
+Creating the webcasts requires a series of command-line tools that need to be installed first: ffmpeg, sox, metaflac, normalize-audio, and ImageMagick. macOS users can install the dependencies using Homebrew and the script `twc-install-dependencies-macos.sh` from the `webcasts` directory. Similarly, Debian users can use `twc-install-dependencies-debian.sh` for convenience.
+
+As the tools for creating the webcasts depend on bash as shell, Windows users will have a bit more work to do.
+
+
 ## Install
 
 Download the project or check it out using git. Afterwards, go to the `webcasts` directory and run the installer:
@@ -20,7 +27,9 @@ This will create a `~/bin/` directory (if it doesn't already exist) and copy all
 
 ## A typical workflow
 
-Assume you have a presentation in PDF format with one page per slide/overlay, and a series of cut audio files corresponding to the slides. Then there are only three simple steps to create your webcast.
+Assume you have a presentation in PDF format with one page per slide/overlay, and a series of cut audio files corresponding to the slides. Then there are only three simple steps to create your webcast. 
+
+All commands are issued on a terminal (using bash as shell).
 
 
 ### Copy audio and PDF files to temporary directory
