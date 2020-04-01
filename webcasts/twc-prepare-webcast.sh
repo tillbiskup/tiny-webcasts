@@ -28,8 +28,8 @@ twc-create-metadata.sh
 
 # Remove now unnecessary image and audio files
 rm *.jpg
-rm *.wav
-rm audio-*.m4a
+#rm *.wav
+#rm audio-*.m4a
 
 # Once you're done editing the metadata, create your final webcast calling
 # twc-create-final-webcast.sh <output_filename>.mp4

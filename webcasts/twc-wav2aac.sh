@@ -47,5 +47,5 @@ flac -d -f -s -o ${tempWave} ${tempFLAC2}
 rm ${tempFLAC2}
 ${normalize} -g"${replayGain}dB" ${tempWave}
 #lame --silent --preset sw ${tempWave} ${targetFile}
-ffmpeg -i  ${tempWave} -c:a aac -b:a 24k ${targetFile}
+ffmpeg -hide_banner -loglevel warning -i ${tempWave} -c:a aac -b:a 24k ${targetFile}
 rm ${tempWave}
