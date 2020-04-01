@@ -37,7 +37,10 @@ sox ${tempFLAC} ${tempFLAC2} ${soxCompand}
 rm ${tempFLAC}
 metaflac --add-replay-gain ${tempFLAC2}
 replayGain=`metaflac --list ${tempFLAC2} | grep REPLAYGAIN_TRACK_GAIN | perl -pe 's/.*=\+?(-?\d+)\.(\d+) dB/$1.$2/sg'`;
-replayGain=`echo "${replayGain} + 0" | bc | perl -pe 's/\./,/sg'`
+# If we are on linux, replace dot with comma
+if [[ $OSTYPE = linux* ]]; then
+    replayGain=`echo "${replayGain} + 0" | bc | perl -pe 's/\./,/sg'`
+fi
 echo "ReplayGain: " ${replayGain} " dB"
 
 flac -d -f -s -o ${tempWave} ${tempFLAC2}
