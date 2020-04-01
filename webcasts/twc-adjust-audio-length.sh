@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Final files should be multiples of the inverse framerate long
-framerate=25;
+FRAMERATE=25;
 
 original_duration=`twc-get-duration.sh $1`
 echo "Original duration: ${original_duration}"
 
 # Two-step rounding to multiples of the inverse frame rate
-tmpduration=`echo "scale=0;(${original_duration}*${framerate})/1" | bc`
-final_duration=`echo "scale=2;(${tmpduration}/${framerate})/1" | bc` 
+tmpduration=`echo "scale=0;(${original_duration}*${FRAMERATE})/1" | bc`
+final_duration=`echo "scale=2;(${tmpduration}/${FRAMERATE})/1" | bc` 
 
 echo "Final duration: ${final_duration}"
 

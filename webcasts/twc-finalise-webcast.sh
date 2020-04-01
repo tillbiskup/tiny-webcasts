@@ -18,4 +18,8 @@ fi
 # Join video and audio trace for final webcast
 ffmpeg -hide_banner -loglevel warning -i audio.m4a -i video.mp4 -i meta.txt -map_metadata 2 -c copy $filename
 
+# Rename metadata files necessary for easy recreating of webcast
+mv vlist.txt ${filename%.mp4}-vlist.txt
+mv meta.txt ${filename%.mp4}-meta.txt
+
 echo "Final webcast written to: ${filename}"

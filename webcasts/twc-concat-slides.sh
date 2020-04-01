@@ -1,5 +1,6 @@
 #!/bin/bash
 
+FRAMERATE=25;
 indexFile=vlist.txt
 
 for k in slides*; do
@@ -14,8 +15,6 @@ tail -n2 ${indexFile} \
 	   | head -n1 \
 	     >> ${indexFile}
 
-ffmpeg -hide_banner -loglevel warning -f concat -i ${indexFile} -c:v libx264 -vf "fps=2,format=yuv420p" video.mp4
-#ffmpeg -hide_banner -loglevel warning -f concat -i ${indexFile} -c:v libx264 -vf "fps=16,format=yuv420p" video-fr16.mp4
-#ffmpeg -hide_banner -loglevel warning -f concat -i ${indexFile} -c:v libx264 -vf "fps=30,format=yuv420p" video-fr30.mp4
+ffmpeg -hide_banner -loglevel warning -f concat -i ${indexFile} -c:v libx264 -vf "fps=${FRAMERATE},format=yuv420p" video.mp4
 
 #rm ${indexFile}
