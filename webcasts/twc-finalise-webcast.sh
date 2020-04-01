@@ -16,4 +16,6 @@ if [[ ${filename: -4} != ".mp4" ]]
 fi
 
 # Join video and audio trace for final webcast
-ffmpeg -i audio.m4a -i video.mp4 -i meta.txt -map_metadata 2 -c copy $filename
+ffmpeg -hide_banner -loglevel warning -i audio.m4a -i video.mp4 -i meta.txt -map_metadata 2 -c copy $filename
+
+echo "Final webcast written to: ${filename}"

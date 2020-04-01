@@ -1,3 +1,5 @@
+#!/bin/bash
+
 for k in audio*m4a
 do 
 	echo "file '${k}'"

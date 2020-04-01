@@ -49,3 +49,7 @@ ${normalize} -g"${replayGain}dB" ${tempWave}
 #lame --silent --preset sw ${tempWave} ${targetFile}
 ffmpeg -hide_banner -loglevel warning -i ${tempWave} -c:a aac -b:a 24k ${targetFile}
 rm ${tempWave}
+
+# Adjust length of ACC (M4A) file, as ffmpeg seems to mess with length
+# when converting from something to AAC
+twc-adjust-audio-length.sh ${targetFile}
