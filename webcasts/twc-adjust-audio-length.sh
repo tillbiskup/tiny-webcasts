@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Final files should be multiples of the inverse framerate long
-FRAMERATE=25;
+FRAMERATE=2;
 
 original_duration=`twc-get-duration.sh $1`
 echo "Original duration: ${original_duration}"

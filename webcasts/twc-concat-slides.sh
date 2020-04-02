@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FRAMERATE=25;
+FRAMERATE=2;
 indexFile=vlist.txt
 
 for k in slides*; do
