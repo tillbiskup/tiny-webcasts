@@ -55,7 +55,9 @@ Have fun and share your knowledge!
 Examples
 ########
 
-A few `examples of webcasts <https://www.till-biskup.de/de/lehre/organische-elektronik/ss2019/>`_ created with the workflow described here can be found on the website of one of the authors. The lectures are currently in German only.
+A few `examples of lecture webcasts <https://www.till-biskup.de/de/lehre/organische-elektronik/ss2019/>`_ created with the workflow described here can be found on the website of one of the authors. The lectures are currently in German only.
+
+A (growing) `series of webcasts introducing Tiny Webcasts <https://www.till-biskup.de/en/software/webcasts/index>` created with -- well, you will guess it -- "Tiny Webcasts" is now as well available, but this time in English.
 
 
 License
@@ -76,3 +78,4 @@ This program is free software: you can redistribute it and/or modify it under th
    quick
    details
    development
+   faq
