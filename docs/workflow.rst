@@ -40,7 +40,7 @@ We recommend using `Audacity <https://www.audacityteam.org/>`_ for this task. Ha
 A few tips and tricks from own experience, making post-processing your audio recording much easier (for you):
 
   * Record the audio for one presentation in one go (mono, not stereo).
-  * Snap your fingers after each slide, to have a visible mark in the audio trace.
+  * (Optional:) Snap your fingers after each slide, to have a visible mark in the audio trace.
   * Take a bit of time between two slides (1--2 seconds).
   * If you get muddled with a slide, snap twice with your fingers and repeat what you want to say for this slide.
   * If you spot typos, simply ignore them and continue talking. You can change the slides afterwards, not affecting your audio recordings.
@@ -48,7 +48,7 @@ A few tips and tricks from own experience, making post-processing your audio rec
   * Describe the slides, *don't* use your mouse or presenter.
   * Don't mix recordings from different parts of a day, as your voice changes during a day.
 
-Why snapping your fingers after each slide? Well, usually, we have problems listening to recordings of our own voice. And if you snap your fingers, you will have a clear mark in the audio trace that you can easily detect optically. For details, see below.
+Why snapping your fingers after each slide? Well, usually, we have problems listening to recordings of our own voice. And if you snap your fingers, you will have a clear mark in the audio trace that you can easily detect optically. For details, see below. Alternatively, if you leave enough time between two slides, you can let the software automatically detect the boundaries between slides.
 
 
 .. tip::
@@ -59,21 +59,54 @@ Why snapping your fingers after each slide? Well, usually, we have problems list
 Cut the audio trace in pieces
 =============================
 
-Before you start cutting the audio trace, make sure to have a copy of it in a safe place.
+Before you start cutting the audio trace, make sure to have a copy of the raw audio recording in a safe place.
 
 Again, we recommend using `Audacity <https://www.audacityteam.org/>`_ for this task. Have a look at the :doc:`short introduction <audacity>` if not already familiar with the program.
+
+Depending on how you recorded your audio originally, *i.e.* whether you snapped your fingers to mark transitions between slides or (only) left some silence between two slides, there are two different strategies how to continue. Perhaps you want to try out both and see whatever fits better.
+
+
+Optically visible marks by snapping your fingers
+------------------------------------------------
+
+Suppose you have recorded the audio for your presentation and snapped with your fingers between each slide.
 
   * Load the audio trace.
   * You will see the transitions between slides optically, as you have snapped your fingers.
   * Select pieces that are **multiples of 0.5 seconds** long, one piece per slide.
-  * Make sure to have exact multiples of 0.5 seconds, use the display in the status bar of Audacity for this.
+  * Make sure to have exact multiples of 0.5 seconds or a bit longer, but not less. Use the display in the status bar of Audacity for this.
   * Export the selected piece of audio to a WAV file, naming it consecutively, *e.g.*: ``audio-000``, ``audio-001``, ...
   * Select the next piece and continue as above.
 
 
-Why multiples of 0.5 seconds in length for the audio files? This determines your frame rate for the final webcast. 0.5 seconds is reasonably fine-grained, while resulting in small files (due to the low video frame rate) at the same time.
+Why multiples of 0.5 seconds in length for the audio files? This determines your frame rate for the final webcast. 0.5 seconds is reasonably fine-grained, while resulting in small files (due to the low video frame rate) at the same time. The postprocessing steps of your audio files will cut each track to exact multiples of 0.5 seconds. Therefore, it is save to have a bit longer pieces, but not a bit less. With the latter, you risk loosing part of your audio recording for the respective slide.
 
-Once you have as many audio files in a directory as you have slides in your presentation, and each audio file being a multiple of 0.5 seconds long, proceed to postprocessing and actually creating your webcast.
+
+Automatically detecting silence between two slides
+--------------------------------------------------
+
+Alternatively, if you haven't snapped your fingers, but just left some silence between two slides, you can let Audacity automatically insert labels that you can use to cut your recording into single tracks.
+
+  * Load the audio trace.
+  * Select the complete audio trace
+  * Select "Analyze" > "Silence finder" from the menu
+  * Choose appropriate values for "Minimum duration of silence" and "Label placement"
+  
+    For me, 1.5 seconds for minimum duration and 0.5 seconds for label placement work fine.
+    
+  * Press the "OK" button to let Audacity place the labels for you.
+  * Below your audio track, a second track labelled "Label Track" will appear, having labels on it.
+  * Make sure to have as many sections as you have slides.
+  
+    To remove a label, click into the text field of the label and use the context menu accessible via right mouse click to delete the label.
+    
+  * Select "File" > "Export" > "Export Multiple" and choose "Labels" from "Split files based on:". Do *not* include audio before first label (as it should be silence anyway).
+  * Export all your traces.
+  
+    Most probably, you need to remove the last exported audio track, as it will contain only silence as well.
+
+
+Once you have as many audio files in a directory as you have slides in your presentation, and each audio file being a multiple of 0.5 seconds long (or slightly longer), proceed to postprocessing and actually creating your webcast.
 
 .. tip::
 

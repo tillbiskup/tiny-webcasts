@@ -12,7 +12,7 @@ Are you a lecturer and interested in not only providing your presentation slides
 
 .. note::
 
-   Interested in a real-world example? A (growing) :doc:`series of webcasts introducing "Tiny Webcasts" <examples>` created with -- well, you will guess it -- "Tiny Webcasts" is now available.
+   Interested in a real-world example? A (growing) :doc:`series of webcasts introducing "Tiny Webcasts" <examples>` created with -- well, you will guess it -- "Tiny Webcasts" is :doc:`now available <examples>`.
    
 
 Features
@@ -35,6 +35,9 @@ To create webcasts, there is only a few simple steps:
   * Cut the audio trace in pieces, one file per slide
   * Run the scripts provided with this project
   * Upload and share your final webcast
+
+
+Eventually, "Tiny Webcasts" is both, a series of command-line tools helping you to create tiny webcasts, and a list of tips and tricks, of best practices, to record webcasts and to help you **focus on your teaching, not the underlying technique**.
 
 
 Installation

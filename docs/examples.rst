@@ -23,6 +23,11 @@ A (growing) `series of webcasts introducing Tiny Webcasts <https://www.till-bisk
    </p>
 
 
+.. only:: html
+
+   A note for users of the Safari webbrowser: This webbrowser seems to not play these videos, and obviously it is a feature, not a bug. If you encounter problems playing the webcasts, I highly recommend using an alternative webbrowser such as Mozilla Firefox.
+
+
 Lectures by the main author (in German)
 =======================================
 

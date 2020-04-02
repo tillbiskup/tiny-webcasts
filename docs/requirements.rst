@@ -5,6 +5,12 @@ A number of programs are used to record and post-process the audio and create th
 
 All the programs mentioned here are free and open-source, and they are definitely available for (and tested under) both, Linux and macOS. They should, however, be available for Windows as well.
 
+
+.. warning::
+
+   Due to "Tiny Webcasts" heavily relying on a series of command-line tools as well as the bash shell, currently, **Windows is not officially supported**. Windows 10 users may have a go with the "Linux Subsystem for Windows", but due to lack of experience, we do not officially support this for now. However, there are plans to provide containerised versions of "Tiny Webcasts" soon.
+
+
 The scripts used to create the webcasts can be obtained from `GitHub <https://github.com/tillbiskup/tiny-webcasts>`_. Just download and unpack (or clone) the project.
 
 
