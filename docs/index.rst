@@ -10,6 +10,11 @@
 Are you a lecturer and interested in not only providing your presentation slides online, but an **audio recording** as well? Would you like to have **small file sizes**, let's say 20--30 MB per hour recorded webcast? Would you be willing to accept a few restrictions, such as no mouse pointer and no HD audio quality? Than we might have something for you.
 
 
+.. note::
+
+   Interested in a real-world example? A (growing) `series of webcasts introducing "Tiny Webcasts" <https://www.till-biskup.de/en/software/webcasts/index#webcasts>`_ created with -- well, you will guess it -- "Tiny Webcasts" is now available.
+   
+
 Features
 ########
 
