@@ -12,7 +12,7 @@ Are you a lecturer and interested in not only providing your presentation slides
 
 .. note::
 
-   Interested in a real-world example? A (growing) `series of webcasts introducing "Tiny Webcasts" <https://www.till-biskup.de/en/software/webcasts/index#webcasts>`_ created with -- well, you will guess it -- "Tiny Webcasts" is now available.
+   Interested in a real-world example? A (growing) :doc:`series of webcasts introducing "Tiny Webcasts" <examples>` created with -- well, you will guess it -- "Tiny Webcasts" is now available.
    
 
 Features
@@ -62,7 +62,7 @@ Examples
 
 A few `examples of lecture webcasts <https://www.till-biskup.de/de/lehre/organische-elektronik/ss2019/>`_ created with the workflow described here can be found on the website of one of the authors. The lectures are currently in German only.
 
-A (growing) `series of webcasts introducing Tiny Webcasts <https://www.till-biskup.de/en/software/webcasts/index#webcasts>`_ created with -- well, you will guess it -- "Tiny Webcasts" is now as well available, but this time in English.
+A (growing) :doc:`series of webcasts introducing Tiny Webcasts <examples>` created with -- well, you will guess it -- "Tiny Webcasts" is now as well available, but this time in English. Look at the :doc:`respective page in this documentation <examples>`.
 
 
 License
@@ -84,3 +84,5 @@ This program is free software: you can redistribute it and/or modify it under th
    details
    development
    faq
+   examples
+
