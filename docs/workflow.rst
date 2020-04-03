@@ -296,4 +296,4 @@ For those concerned about file sizes: A sensible idea to reduce the size of the 
 Upload and share your webcast
 =============================
 
-If course, where to upload and how to share your webcast(s) depends highly on your preferences and local circumstances. Personally, we advice against using YouTube, but are very much in favour of e-learning and teaching platforms such as a (local) moodle installation. Your personal webpage will also do, if that is reasonably well-known by the students and other people interested in your teaching.
+Of course, where to upload and how to share your webcast(s) depends highly on your preferences and local circumstances. Personally, we advice against using YouTube, but are very much in favour of e-learning and teaching platforms such as a (local) moodle installation. Your personal webpage will also do, if that is reasonably well-known by the students and other people interested in your teaching.
