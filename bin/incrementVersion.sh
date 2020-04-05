@@ -19,8 +19,8 @@
 # containing the version string will be checked for manual changes
 # and if there are any, the script will exit immediately.
 #
-# Copyright (c) 2017-18, Till Biskup
-# 2018-11-05
+# Copyright (c) 2017-20, Till Biskup
+# 2020-04-05
 
 # Some configuration
 VERSIONFILE="VERSION"
@@ -28,6 +28,18 @@ CHECKGIT=true # set to "true" to check for changes via git diff
 
 # Internal functions
 function join_by { local IFS="$1"; shift; echo "$*"; }
+
+function git_branch_name {
+	$(git rev-parse --symbolic --abbrev-ref HEAD)
+}
+
+# Dirty fix: If we are on release branch, don't do anything
+branch=$(git_branch_name)
+if [[ ${branch} == release ]]
+then
+    echo "On branch '$branch', hence nothing done..."
+    exit
+fi
 
 if [[ ${CHECKGIT} == true && `git diff --name-only ${VERSIONFILE}` ]]
 then
