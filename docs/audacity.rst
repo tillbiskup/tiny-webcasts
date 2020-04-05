@@ -95,6 +95,12 @@ For the webcasts, two things are important to have in mind when recording and cu
 
 There is clearly different ways how to cut your recorded audio. The way proposed here is to mark the sections for each of the slides, ensure that the marked area is a multiple of 0.5 seconds long, and export the selected audio as WAV file.
 
+
+.. important::
+
+   Please note that the way described here to cut your audio trace does not yet reflect the alternative way of letting Audacity determine the track boundaries. Furthermore, you need not cut the tracks to exact multiples of 0.5 seconds, but should make sure that they are usually slightly longer. The audio files will be adjusted automatically to multiples of 0.5 seconds by cutting from the end.
+
+
 As mentioned, it comes in quite handy to have cut marks (by snapping your fingers) optically visible on your audio trace, as shown in :numref:`fig-audacity-cut`.
 
 

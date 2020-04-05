@@ -1,5 +1,5 @@
-Development
-===========
+Roadmap
+=======
 
 A few ideas how to develop the project further, currently a list as a reminder for the authors themselves:
 
@@ -18,8 +18,6 @@ A few ideas how to develop the project further, currently a list as a reminder f
     * Format of video et cetera
     
   * Containerisation: docker
-  
-    * "Software as a Service" (local)
     
     * Web interface for convenient usage
 
