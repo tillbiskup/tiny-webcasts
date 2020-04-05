@@ -30,7 +30,7 @@ CHECKGIT=true # set to "true" to check for changes via git diff
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
 function git_branch_name {
-	$(git rev-parse --symbolic --abbrev-ref HEAD)
+	git rev-parse --symbolic --abbrev-ref HEAD
 }
 
 # Dirty fix: If we are on release branch, don't do anything
