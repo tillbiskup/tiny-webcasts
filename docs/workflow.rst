@@ -116,181 +116,168 @@ Once you have as many audio files in a directory as you have slides in your pres
 Create the actual webcast
 =========================
 
-Creating the actual webcast involves four steps, three of them fully automated:
+Creating the actual webcast involves just two steps, one of them fully automated:
 
-  #. Create a temporary directory with audio files and PDF presentation.
-  #. Prepare the webcast
-  #. Edit the metadata, including chapter marks (if necessary)
-  #. Finalise the webcast
+  #. Generate and edit the metadata for your webcast
+  #. Create the actual webcast
 
 These steps assume that you have a presentation in PDF format with one page per slide/overlay, and a series  of cut audio files (in WAV format) corresponding to the slides.
 
-
-.. note::
-
-   For convenience, we've created a command ``twc`` with a simple syntax for the most common tasks. These will be described hereafter. For a more detailed description of the individual scripts, the interested user is referred to the :doc:`detailed documentation <details>`.
+Ideally, the contents of this directory look similar to the following:
 
 
-.. warning::
+.. code-block:: bash
 
-   Always **work on a copy of your audio files** stored in a temporary directory. The commands for creating the webcast will remove the original WAV files in the working directory for a better overview. Read on for convenient ways to create such a temporary directory.
+	.
+	├── audio-000.wav
+	├── audio-001.wav
+	├── ...
+	├── audio-nnn.wav
+	├── audio-raw.wav
+	└── presentation.pdf
 
-
-Create a temporary directory
-----------------------------
-
-Put all cut audio files and the PDF file of the presentation in one (temporary) directory. If you're lazy, you may consider simply calling::
-
-  twc tmpdir
-
-
-Ideally, the contents of this directory look similar to the following::
-
-  presentation.pdf
-  audio-001.wav
-  audio-002.wav
-  audio-003.wav
-  audio-004.wav
-  ...
-  audio-nnn.wav
 
 It doesn't matter how you name your presentation, as long as you have only a single PDF file in the temporary directory. Furthermore, as long as your audio files are named in a consecutive way so that they are listed in the correct order (using the ``ls`` command), everything should be fine.
 
 Wonder why using three digits for numbering the audio files? From own experience, it can easily happen for a lecture of 45 minutes that you end up with more than 99 single slides, provided that you uncover content on a single slide in small steps. Remember: The number of slides appearing in your presentation is usually less than the actual number of slides you are showing if you uncover things stepwise.
 
-
-.. warning::
-
-   **Never ever** run the following scripts in the directory containing your original cut WAV files from the process before, but in a temporary directory containing only the cut WAV files and the PDF file for the presentation. The scripts will **delete** the raw files. For convenience, execute the command ``twc tmpdir`` to create such a temporary directory named ``tmp`` and get all necessary files copied therein.
+Additionally, you can see here that each audio file with ``raw`` in its name will get ignored. Hence, add the string ``raw`` to the name of your original audio recording to have it ignored by the "Tiny Webcasts" command-line tool.
 
 
-Prepare the webcast
--------------------
+.. note::
 
-We assume that by now you have **changed into the temporary directory** created in the last step. To do so, type::
-
-  cd tmp
-
-and make sure that the directory contains all the files necessary for creating the webcast, *i.e.* the WAV files from the cut recording (one WAV file per slide) and the presentation in PDF format. You may do so using the command ``ls`` in the terminal.
+   The "Tiny Webcasts" command-line tool is called ``twc`` and can be invoked from the terminal, regardless whether you chose to install it directly on your operating system or via docker.
 
 
-The first step consists of converting the PDF file of the presentation into images (one per slide), post-process the audio files, concatenate audio and video trace, and create a metadata template. All this can be done with a single call from within the (temporary) directory created and filled as detailed above::
+Generate and edit the metadata
+------------------------------
 
-  twc prepare
-
-
-.. warning::
-
-   This step will **delete** your WAV files. Hence, never ever run it in the directory containing your original cut audio files, but in the temporary directory created as described above.
+The first step towards your webcast is to generate templates for the metadata and afterwards edit the two metadata files created. To generate the metadata files, simply issue the following command on a terminal:
 
 
-Edit the metadata
------------------
+.. code-block:: bash
 
-Now, you will have to edit the metadata contained in ``meta.txt``. Of course, you can use any text editor you like, as long as it is a bare text editor. What does this file ``meta.txt`` actually contain and what is it used for? Well, it contains all information regarding the overall webcast as well as information for each individual slide, making it possible to create chapter marks. A raw ``meta.txt`` file will look like this::
-
-	;FFMETADATA1
-	title=xxx
-	artist=xxx
-	album=xxx
-	date=xxx
-	track=1/n
-	genre=xxx
-	1[CHAPTER]
-	TIMEBASE=1/1000
-	START=1
-	END=42
-	title=TBD
-	2[CHAPTER]
-	TIMEBASE=1/1000
-	START=42
-	END=96
-	title=TBD
-	...
-	n[CHAPTER]
-	TIMEBASE=1/1000
-	START=4242
-	END=4296
-	title=TBD
+   twc metadata
 
 
-First to the first block of metadata: "title", "artist", "date", and "track" should be rather straightforward. For "album", we would suggest to use the name of the teaching unit, *i.e.* the lecture or seminar series. For "genre", you can add whatever you like.
-
-All the other blocks, each starting with ``###[CHAPTER]``, are used to create bookmarks within your webcast. This is a very useful feature if you cover more than one topic in a single webcast, as it allows the listener to jump directly within the webcast. Generally, webcasts longer than a few minutes should always consist of several parts and hence have bookmarks set. However, if you don't want to bother, simply delete everything starting with the line ``1[CHAPTER]`` from your ``meta.txt`` file.
-
-Usually, a chapter consists of several slides, hence you need to manually remove some (or rather most of) the blocks starting with ``###[CHAPTER]``, where ``###`` denotes the slide number (for convenience). Important: You need to delete these numbers in front of the ``[CHAPTER]`` mark in your final ``meta.txt`` file. The final metadata file should look simliar to the following::
-
-	;FFMETADATA1
-	title=My fancy first webcast
-	artist=Incredible Me
-	album=Tiny Webcasts to go
-	date=2020/04/01
-	track=1/42
-	genre=Physical Chemistry
-	[CHAPTER]
-	TIMEBASE=1/1000
-	START=1
-	END=2096
-	title=Intro: Why do we actually care?
-	[CHAPTER]
-	TIMEBASE=1/1000
-	START=2096
-	END=4296
-	title=Summary: Why it didn't matter at all.
+This will generate two metadata files, one for the overall metadata of your webcast, one for creating chapter marks. The latter is a very convenient feature for the listeners of your webcasts, as they can easily jump to different sections. The output of the command shown above should look like this:
 
 
-Note that we have removed the (slide) numbers prefixing each of the ``[CHAPTER]`` lines and adjusted the ``END`` lines accordingly. The ``START`` of a new chapter should be the same as the ``END`` of the preceding chapter.
+.. code-block:: bash
+
+   Creating metadata
+   Created metadata file 'meta.txt'.
+   You may want to edit the metadata file 'meta.txt' now.
+   Created metadata file 'chaptermeta.txt'.
+   You may want to edit the chapter metadata file 'chaptermeta.txt' now.
 
 
-Finalise the webcast
---------------------
-
-And finally, you can create the webcast::
-
-  twc finalise my_fancy_webcast.mp4
+Just do as you have been told and edit the two files. Here is how they look like and what their contents actually mean.
 
 
-You need not to provide the file extension ``.mp4``, it will be added automatically for you. Furthermore, if you forget to provide a filename for your final webcast, the command will tell you that this is missing.
+The overall metadata: ``meta.txt``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each video (and hence webcast) contains some general information, such as the title, author, date. This can be set in the file ``meta.txt``. The template generated by issuing the command ``twc metadata`` looks like follows:
 
 
-Finally, what files should be saved, for simpler changes later on? At least, you should save the following files (and back them up to a safe place):
+.. code-block:: bash
 
-  * Raw audio recording
-  * Cut audio (one file per slide)
-  * PDF of presentation
-  * Metadata for creating the final webcast
-  * Final webcast
+   ;FFMETADATA1
+   title=My First Tiny Webcast
+   artist=John Doe
+   album=Tiny Webcasts
+   date=2020/04/04
+   track=1/42
+   genre=Lectures
 
-Here is an idea for a final directory layout of your webcasts, assuming you create a series of (numbered) webcasts for a certain topic::
 
-  topic/
-    01/
-      raw/
-        topic-01-audio-raw.wav
-        topic-01-presentation.pdf
-      cut/
-        topic-01-audio-000.wav
-        topic-01-audio-001.wav
-        ...
-        topic-01-audio-nnn.wav
-      webcast/
-        topic-01-webcast.mp4
-        topic-01-metadata.txt
-    02/
-      raw/
-        topic-02-audio-raw.wav
-        topic-02-presentation.pdf
-      cut/
-        topic-02-audio-000.wav
-        topic-02-audio-001.wav
-        ...
-        topic-02-audio-nnn.wav
-      webcast/
-        topic-02-webcast.mp4
-        topic-02-metadata.txt
-    ...
+The fields "title", "artist", "date", and "track" should be rather straightforward. For "album", we suggest to use the name of the teaching unit, *i.e.* the lecture or seminar series. For "genre", you can add whatever you like.
 
-For those concerned about file sizes: A sensible idea to reduce the size of the raw and cut audio files is to convert them into FLAC format. This format is lossless, but still much smaller than WAV files.
+It is highly recommended to actually **edit** these values, as otherwise, your final webcast will contain just those default values shown here.
+
+
+The chapter metadata: ``chaptermeta.txt``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As mentioned, chapter marks are a very convenient feature for the listeners of your webcasts, as they can easily jump to different sections. All you need to do is to think of chapter titles and insert those at the respective places in the file ``chaptermeta.txt``. The important bit of this file is shown below:
+
+
+.. code-block:: bash
+
+   title=TBD
+     slide1
+     slide2
+     slide3
+     ...
+     slideN
+
+
+Please note that the file ``chaptermeta.txt`` as created by the command ``twc metadata`` comes with extensive documentation contained in the actual file. Simply follow the advice given there and edit according to your needs.
+
+
+.. important::
+
+   If you don't want to include any chapter marks, simply leave the file ``chaptermeta.txt`` unchanged. In this case, it will get ignored, leaving your final webcast without any chapter marks.
+
+
+Now that you have edited the metadata of your webcast, you can proceed to actually creating your webcast.
+
+
+Create the actual webcast
+-------------------------
+
+After having generated and edited the metadata as shown in the step before, simply create the webcast, with just one simple command issued in the terminal:
+
+
+.. code-block:: bash
+
+   twc make
+
+
+This will create a subdirectory in your current directory, called ``out`` and containing the final webcast and a few more files that may come in handy for later changes.
+
+Generally, ``twc`` will tell you what it does. The output will look similar to the following:
+
+
+.. code-block:: bash
+
+	Checking project
+	Everything seems fine and ready for creating the webcast.
+	Making project
+	# Created output directory out and copied WAV and PDF file(s) therein.
+	audio-000.wav => audio-000.wav
+	audio-001.wav => audio-001.wav
+	# processing audio 'audio-000.wav': InputGain: 3.6530; referenceGain: 3.55 dB; ReplayGain: 6.60 dB;
+	# adjusting length 'audio-000.m4a': from 4.06 s to 4.00 s
+	# processing audio 'audio-001.wav': InputGain: 3.2795; referenceGain: 6.58 dB; ReplayGain: 5.31 dB;
+	# adjusting length 'audio-001.m4a': from 4.06 s to 4.00 s
+	# concatenating slides to video
+	[swscaler @ 0x10ee07000] deprecated pixel format used, make sure you did set range correctly
+	# concatenating audio files to final audio trace
+	# combining video and audio trace to final webcast
+	Final webcast written to: out/presentation.mp4
+
+
+Of course, you will usually have more audio files than in this example (with only two audio files), but besides that, it should look pretty similar.
+
+As you can see from the output, the first step ``twc make`` does is checking whether all relevant files are available and everything is setup for creating the webcast. The program will tell you if there is something missing and how to fix it.
+
+So how does the final result look like? Here is a view of the ``out`` directory:
+
+
+.. code-block:: bash
+
+	out/
+	├── presentation-chaptermeta.txt
+	├── presentation-meta.txt
+	├── presentation.mp4
+	└── presentation.pdf
+
+
+What you see here is that the final webcast and all metadata have been prefixed by the name of your presentation. Hence, if you give your presentation (*i.e.* the PDF file) a reasonable name, probably including both a shorthand for the lecture series and a consecutive number, you will end up with sensible file names here as well.
+
+The two files you are actually most interested in are the webcast (as MP4 video) and the presentation (as PDF file). You may want to upload either only the webcast or, better, both the webcast and the slides as PDF file.
 
 
 Upload and share your webcast

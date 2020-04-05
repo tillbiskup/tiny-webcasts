@@ -30,96 +30,49 @@ You should have a directory containing the following:
   * Your original audio recording (as WAV), having ``-raw.wav`` at the end of the name
   * Your cut audio files, one file per slide, consecutively numbered
   
-Ideally, the contents of this directory look similar to the following::
-
-  audio-001.wav
-  audio-002.wav
-  audio-003.wav
-  audio-004.wav
-  ...
-  audio-nnn.wav
-  audio-raw.wav
-  presentation.pdf
+Ideally, the contents of this directory look similar to the following:
 
 
-Create temporary directory
+.. code-block:: bash
+
+	.
+	├── audio-000.wav
+	├── audio-001.wav
+	├── ...
+	├── audio-nnn.wav
+	├── audio-raw.wav
+	└── presentation.pdf
+
+
+Generate and edit metadata
 ==========================
 
-.. warning::
-
-   **Never ever** execute the commands creating the webcast in the directory containing your original WAV files, but in a temporary directory containing only the cut WAV files and the PDF file for the presentation. The commands will **delete** the raw files.
+To generate the metadata files, simply issue the following command on a terminal:
 
 
-To create a temporary directory ``tmp`` within your current directory containing the files as detailed above, issue the following command in the terminal::
+.. code-block:: bash
 
-  twc tmpdir
-
-Afterwards, change into the newly created temporary directory ``tmp`` as follows::
-
-  cd tmp
-
-The contents of this directory should look similar to the following::
-
-  audio-001.wav
-  audio-002.wav
-  audio-003.wav
-  audio-004.wav
-  ...
-  audio-nnn.wav
-  presentation.pdf
+   twc metadata
 
 
-Prepare the webcast
-===================
+This will generate two metadata files, one for the overall metadata of your webcast, one for creating chapter marks. Edit both files according to your needs.
 
-From within the temporary directory, issue the following command::
-
-  twc prepare
-
-Your directory should now look similar to the following::
-
-  audio.m4a
-  meta.txt
-  presentation.pdf
-  video.mp4
-
-Note that the original cut WAV files have been removed. This is why you should *never* issue this command in the directory with your original WAV files.
+If you're not interested in adding chapter marks, simply leave the file ``chaptermeta.txt`` unchanged and it will get ignored by ``twc``.
 
 
-Edit the metadata
-=================
 
-The only manual step: Edit the metadata contained in ``meta.txt`` with the text editor of your choice.
+Create the actual webcast
+=========================
 
-The final metadata should look similar to the following::
-
-	;FFMETADATA1
-	title=My fancy first webcast
-	artist=Incredible Me
-	album=Tiny Webcasts to go
-	date=2020/04/01
-	track=1/42
-	genre=Physical Chemistry
-	[CHAPTER]
-	TIMEBASE=1/1000
-	START=1
-	END=2096
-	title=Intro: Why do we actually care?
-	[CHAPTER]
-	TIMEBASE=1/1000
-	START=2096
-	END=4296
-	title=Summary: Why it didn't matter at all.
-
-Don't forget to remove the numbers prefixing each ``[CHAPTER]`` mark. If you're not interested in chapter bookmarks, simply delete everything starting with the first ``[CHAPTER]`` mark.
+After having generated and edited the metadata as shown in the step before, simply create the webcast, with just one simple command issued in the terminal:
 
 
-Finalise your webcast
-=====================
+.. code-block:: bash
 
-After having edited the metadata, simply finalise your webcast, adding audio and video trace together::
+   twc make
 
-    twc finalise my_fancy_webcast.mp4
+
+This will create a subdirectory in your current directory, called ``out`` and containing the final webcast.
 
 That's it. Share it and enjoy.
 

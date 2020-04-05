@@ -26,42 +26,16 @@ Installation requires two things:
   * A terminal (and basic knowledge how to use it)
 
 
-Do you support Windows?
-=======================
+Can I use "Tiny Webcasts" on Windows?
+=====================================
 
-Unfortunately, currently the Windows platform is not supported. All programs used by "Tiny Webcasts" are available for Windows, too. Therefore, there should be no general problem in getting "Tiny Webcasts" to run using the Windows platform.
-
-Please note that "Tiny Webcasts" requires the ``bash`` shell to run. Therefore, Windows users need to install this shell as well.
-
-Windows 10 users may use the "Linux subsystem for Windows" and follow the instructions for the Linux platform.
-
-Due to lack of experience of the authors with the Windows platform, currently, there is no further support available.
+Yes, you can (starting with release 0.2.0), thanks to adding functionality to create a docker image.
 
 
-How to exit the "vim" editor?
-=============================
+Why did you change the user interface?
+======================================
 
-I've followed the documentation and opened the file ``meta.txt`` with the "vim" editor on the terminal. Now I'm stuck. How to edit the file, and how to exit this editor?
+Those users having used version 0.1.0 will notice that the user interface of the ``twc`` command has changed quite a bit with version 0.2.0. This is generally deemed bad practice, as the user interface should be as stable as possible, not having breaking changes (as in this case). However, there were good reasons for this change (usability), and there is a reason why we are still with version 0.x (see `Semantic Versioning <https://semver.org/>`_ for details).
 
-Admittedly, "vim" is rather useful for users familiar with the command line. Nevertheless, here a few very quick hints.
-
-  * Editing
-  
-    Press "i" to enter the edit mode
-  
-  * Saving an edited file
-  
-    Press "Esc" + ":" + "w"
-  
-  * Exiting the "vim" editor
-  
-    Press "Esc" + ":" + "q"
-
-
-"twc prepare" does not create a file "video.mp4"
-================================================
-
-Does your PDF file of your presentation contain as many pages (slides) as you have WAV files?
-
-If not, the programs don't know how to handle the situation and produce errors (and no video).
+The new user interface has been streamlined and should be much more convenient to use. The idea behind "Tiny Webcasts", besides small resulting videos, still is: **focus on your teaching, not the underlying technique**.
 

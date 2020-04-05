@@ -1,8 +1,3 @@
-.. Webcasts documentation master file, created by
-   sphinx-quickstart on Sun Mar  8 09:49:17 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 ###############################
  Tiny webcasts for lecture(r)s
 ###############################
@@ -23,6 +18,7 @@ Features
   * Tool chain consisting exclusively of open source programs
   * Slides separated from audio: perfect for fixing typos, changing slide layout and alike
   * Open source, free of charge
+  * **Docker image available** (including support for the **Windows** platform)
 
 
 In a nutshell
@@ -33,21 +29,25 @@ To create webcasts, there is only a few simple steps:
   * Create your presentation (slide show) and convert it into PDF format
   * Record the audio for your presentation
   * Cut the audio trace in pieces, one file per slide
-  * Run the scripts provided with this project
+  * Run the "twc" program provided with this project
   * Upload and share your final webcast
 
 
-Eventually, "Tiny Webcasts" is both, a series of command-line tools helping you to create tiny webcasts, and a list of tips and tricks, of best practices, to record webcasts and to help you **focus on your teaching, not the underlying technique**.
+Eventually, "Tiny Webcasts" is both, a command-line tool helping you to create tiny webcasts, and a list of tips and tricks, of best practices, to record webcasts and to help you **focus on your teaching, not the underlying technique**.
 
 
 Installation
 ############
 
-The scripts used to create the webcasts can be obtained from `GitHub <https://github.com/tillbiskup/tiny-webcasts>`_.
+The command-line tool used to create the webcasts can be obtained from `GitHub <https://github.com/tillbiskup/tiny-webcasts>`_.
 
 Check the :doc:`requirements page <requirements>` for additional programs necessary and how to install them.
 
-For :doc:`installing <installation>` the scripts there are a few hints and there exists even an installer script for your convenience.
+For :doc:`installing <installation>` the command-line tool there are a few hints and there exist even installer scripts for different platforms for your convenience.
+
+.. note::
+
+   There are now **two options** available for installing the "Tiny Webcasts" command-line tool. Either a **direct install** on your system (available for Linux and macOS), making it necessary to install all the :doc:`requirements <requirements>`, or using a **docker image**, provided you have docker locally installed on your machine.
 
 
 Where to start
@@ -76,16 +76,28 @@ This program is free software: you can redistribute it and/or modify it under th
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: User Manual:
 
    audience
    requirements
    installation
    workflow
+   organising
    audacity
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Resources:
+
    quick
-   details
-   development
    faq
+   comments
    examples
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Developers:
+
+   roadmap
+   changelog
