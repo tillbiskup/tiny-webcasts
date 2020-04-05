@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Name of the executable
-targetFile=dtwc
+targetFile=twc
 
 # Create directory for local binaries in user home if it doesn't exist
 mkdir -p ~/bin/

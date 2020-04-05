@@ -14,6 +14,4 @@ function finaliseWebcast() {
 	ffmpeg -hide_banner -loglevel warning \
 		-i audio.m4a -i video.mp4 -i "${ffmpegMetadataFilename}" \
 		-map_metadata 2 -c copy ${outputFilename}
-
-	echo "Final webcast written to: ${outputFilename}"
 }

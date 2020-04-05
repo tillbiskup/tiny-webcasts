@@ -27,7 +27,8 @@ function createOutputDirectory() {
 	done
 
 	# Copy pdf file (presumably the presentation)
-	if [ ! -f *.pdf ]; then
+	pdffileCount=$(countFiles "*.pdf")
+	if [[ ${pdffileCount} = 0 ]]; then
 	    echo "You seem not to have a PDF file (for your presentation)."
 	    echo "This will create problems in the next step."
 	    echo "Please, add a PDF file with your slides to the output directory."
@@ -37,7 +38,8 @@ function createOutputDirectory() {
 	fi
 
 	# Copy metadata file
-	if [ ! -f *meta.txt ]; then
+	metadatafileCount=$(countFiles "*meta.txt")
+	if [[ ${metadatafileCount} = 0 ]]; then
 	    echo "You seem not to have a metadata file."
 	    echo "This will create problems in the next step."
 	    echo "Please, create a metadata file, e.g. issuing 'twc metadata'."

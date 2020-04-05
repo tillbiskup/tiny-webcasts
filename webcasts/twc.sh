@@ -20,7 +20,7 @@ fi
 metadataFile='meta.txt'
 chapterMetadataFile='chaptermeta.txt'
 ffmpegMetadataFile='ffmpegmeta.txt'
-finalWebcastFile='final-webcast.mp4'
+webcastFile='final-webcast.mp4'
 outputDirectory='out'
 
 command="$1"
@@ -62,7 +62,9 @@ case ${command} in
 		concatSlides
 		concatAudio
 
-		finaliseWebcast "${finalWebcastFile}" "${ffmpegMetadataFile}"
+		finaliseWebcast "${webcastFile}" "${ffmpegMetadataFile}"
+		cleanupAndRenameFiles "${webcastFile}"
+		echo "Final webcast written to: ${outputDirectory}/${finalWebcastFilename}"
 
 		# Cleanup
 		rm *.jpg
