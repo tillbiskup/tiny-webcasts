@@ -9,22 +9,38 @@ All bash functions reside in the `webcasts` directory and subdirectories. Docume
 
 ## Requirements/Dependencies
 
+There is two options to use "Tiny Webcasts": Install all necessary dependencies and use it directly from the command line, or alternatively use a docker image.
+
+
+### Dependencies for command-line usage
+
 Creating the webcasts requires a series of command-line tools that need to be installed first: ffmpeg, sox, metaflac, normalize-audio, and ImageMagick. macOS users can install the dependencies using Homebrew and the script `twc-install-dependencies-macos.sh` from the `webcasts` directory. Similarly, Debian users can use `twc-install-dependencies-debian.sh` for convenience.
 
 As the tools for creating the webcasts depend on bash as shell, Windows users will have a bit more work to do.
+
+
+### Docker image
 
 Alternatively, you may create a docker image from the docker file provided. In this case, all you need is a working docker installation. This is the recommended (and only tested) way for users of the Windows operating systems.
 
 
 ## Install
 
-Download the project or check it out using git. Afterwards, go to the `webcasts` directory and run the installer:
+Download the project or check it out using git. The next steps depend on how you prefer to use "Tiny Webcasts". Directly on your system, having all requirements installed, or as a docker image.
+
+
+### Directly on the system
+
+Open a terminal, change to the directory you've downloaded "Tiny Webcasts" to, change to the `webcasts` subdirectory and run the installer:
 
 ```bash
 ./twc-install.sh
 ```
 
 This will create a `~/bin/` directory (if it doesn't already exist) and copy the `twc` bash script in there.
+
+
+### Docker
 
 Alternatively, if you would want to use docker, you can run the respective installer to create the docker image and create a shortcut for running the docker image:
 
