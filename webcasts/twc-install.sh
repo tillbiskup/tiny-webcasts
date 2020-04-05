@@ -1,14 +1,22 @@
 #!/bin/bash
 
-# Install all bash scripts for creating webcasts to the user's bin directory.
+# Create and install bash script for creating webcasts to the user's bin directory.
+targetFile=twc
 
 # Create directory for local binaries in user home if it doesn't exist
 mkdir -p ~/bin/
 
-# Copy all shell scripts (excluding this install script)
-ls -1 | grep -v 'twc-install' | while read filename
-	do cp ${filename} ~/bin/
-done
+# Generate awk calling function
+cd functions
+./generate-combine-user-chaptermetadata-times-awk-function.sh > combine-user-chaptermetadata-times.sh
+cd ../
+
+# Create bash script containing all functions contained in .sh files
+# excluding those with "awk" in their filename
+(echo '#!/bin/bash'; cat `ls functions/*sh | grep -v 'awk'` | grep -v '^#!/bin/bash'; grep -v '^#!/bin/bash' twc.sh) > ${targetFile}
+chmod +x ${targetFile}
+
+mv ${targetFile} ~/bin/
 
 # Add ~/bin/ to PATH variable (via .profile) if not already included
 if [[ $PATH != *"$HOME/bin"* ]];
@@ -18,4 +26,5 @@ if [[ $PATH != *"$HOME/bin"* ]];
     echo "You need to open a new terminal for the changes to take effect..."
 fi
 
-echo "Installing twc scripts to $HOME/bin/ was successful."
+echo "Installing '${targetFile}' script to $HOME/bin/ was successful."
+echo "You may now create tiny webcasts by calling '${targetFile}' from anyhwere."
