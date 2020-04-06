@@ -17,8 +17,8 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-metadataFile='meta.txt'
-chapterMetadataFile='chaptermeta.txt'
+metadataFile='webcast-meta.txt'
+chapterMetadataFile='webcast-chaptermeta.txt'
 ffmpegMetadataFile='ffmpegmeta.txt'
 webcastFile='final-webcast.mp4'
 outputDirectory='out'
@@ -54,8 +54,8 @@ case ${command} in
 
 		prepareWebcast
 		createFfmpegMetadata \
-			"*-${metadataFile}" \
-			"*-${chapterMetadataFile}" \
+			"${metadataFile}" \
+			"${chapterMetadataFile}" \
 			"${ffmpegMetadataFile}"
 
 		# Create audio and video trace
