@@ -17,8 +17,8 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
-metadataFile='webcast-meta.txt'
-chapterMetadataFile='webcast-chaptermeta.txt'
+metadataFile='meta.txt'
+chapterMetadataFile='chaptermeta.txt'
 ffmpegMetadataFile='ffmpegmeta.txt'
 webcastFile='final-webcast.mp4'
 outputDirectory='out'
@@ -27,11 +27,11 @@ command="$1"
 case ${command} in
 	"metadata")
 	    echo "Creating metadata"
-		createMetadataTemplate "${metadataFile}"
+		createMetadataTemplate "webcast-${metadataFile}"
 		echo "You may want to edit the metadata file '${metadataFile}' now."
 		checkNumberOfPdfFiles
 		numberOfSlides=$(pdfNumberOfPages *.pdf)
-		createChapterMetadataTemplate "${chapterMetadataFile}" ${numberOfSlides}
+		createChapterMetadataTemplate "webcast-${chapterMetadataFile}" ${numberOfSlides}
 		echo "You may want to edit the chapter metadata file '${chapterMetadataFile}' now."
 		;;
 	"check")
@@ -54,8 +54,8 @@ case ${command} in
 
 		prepareWebcast
 		createFfmpegMetadata \
-			"${metadataFile}" \
-			"${chapterMetadataFile}" \
+			"*-${metadataFile}" \
+			"*-${chapterMetadataFile}" \
 			"${ffmpegMetadataFile}"
 
 		# Create audio and video trace
