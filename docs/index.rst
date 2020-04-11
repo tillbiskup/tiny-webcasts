@@ -29,7 +29,7 @@ To create webcasts, there is only a few simple steps:
   * Create your presentation (slide show) and convert it into PDF format
   * Record the audio for your presentation
   * Cut the audio trace in pieces, one file per slide
-  * Run the "twc" program provided with this project
+  * Run the "twc" command-line program provided with this project
   * Upload and share your final webcast
 
 
@@ -41,13 +41,23 @@ Installation
 
 The command-line tool used to create the webcasts can be obtained from `GitHub <https://github.com/tillbiskup/tiny-webcasts>`_.
 
-Check the :doc:`requirements page <requirements>` for additional programs necessary and how to install them.
+There are now two options available for installing the "Tiny Webcasts" command-line tool:
+    
+  * Docker image
+  
+    requires docker locally installed on your machine, preferred way for **Windows** (and macOS) users.
 
-For :doc:`installing <installation>` the command-line tool there are a few hints and there exist even installer scripts for different platforms for your convenience.
+  * Direct install
+  
+    available for Linux and macOS, makes it necessary to install all the :doc:`requirements <requirements>`
+
 
 .. note::
 
-   There are now **two options** available for installing the "Tiny Webcasts" command-line tool. Either a **direct install** on your system (available for Linux and macOS), making it necessary to install all the :doc:`requirements <requirements>`, or using a **docker image**, provided you have docker locally installed on your machine.
+   We highly recommend to use the **Docker image** provided. This only requires Docker to be installed on your computer and is the preferred way for **Windows** users.
+
+
+Have a look at :doc:`how to install Tiny Webcasts <installation>` (the command-line tool) for your operating system.
 
 
 Where to start
@@ -79,7 +89,6 @@ This program is free software: you can redistribute it and/or modify it under th
    :caption: User Manual:
 
    audience
-   requirements
    installation
    workflow
    organising
@@ -99,5 +108,6 @@ This program is free software: you can redistribute it and/or modify it under th
    :maxdepth: 2
    :caption: Developers:
 
+   requirements
    roadmap
    changelog

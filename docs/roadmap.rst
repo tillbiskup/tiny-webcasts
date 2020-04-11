@@ -30,6 +30,4 @@ A few ideas how to develop the project further, currently a list as a reminder f
   * Windows installation
   
     * graphical installer (using NSIS? https://nsis.sourceforge.io/)
-    
-    * Test for a working docker installation
 
