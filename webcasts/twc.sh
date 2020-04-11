@@ -27,11 +27,11 @@ command="$1"
 case ${command} in
 	"metadata")
 	    echo "Creating metadata"
-		createMetadataTemplate "${metadataFile}"
+		createMetadataTemplate "webcast-${metadataFile}"
 		echo "You may want to edit the metadata file '${metadataFile}' now."
 		checkNumberOfPdfFiles
 		numberOfSlides=$(pdfNumberOfPages *.pdf)
-		createChapterMetadataTemplate "${chapterMetadataFile}" ${numberOfSlides}
+		createChapterMetadataTemplate "webcast-${chapterMetadataFile}" ${numberOfSlides}
 		echo "You may want to edit the chapter metadata file '${chapterMetadataFile}' now."
 		;;
 	"check")

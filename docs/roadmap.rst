@@ -7,9 +7,9 @@ A few ideas how to develop the project further, currently a list as a reminder f
   
     * twc command for creating the directory layout
     
-    * Safer handling of deleting/moving files
-    
   * Converting WAV into FLAC (one-liner)
+  
+    * For storing/archiving raw files
   
   * Configuration
   
@@ -26,4 +26,8 @@ A few ideas how to develop the project further, currently a list as a reminder f
     * Opus video codec: https://opus-codec.org/
     
     * List of MP3 files with cover images
+
+  * Windows installation
+  
+    * graphical installer (using NSIS? https://nsis.sourceforge.io/)
 

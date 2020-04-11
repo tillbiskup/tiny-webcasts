@@ -11,6 +11,7 @@ function presentation2Jpeg() {
 	# Height is fixed to 1080 px
 	convert \
 	  -density 285.75 \
+      -alpha remove \
 	  "${inputPDF}" \
 	  -quality 90 \
 	  -geometry x1080 \
