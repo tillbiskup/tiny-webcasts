@@ -4,6 +4,25 @@ Changelog
 A list of changes between releases. This list is not exhaustive, for details look at the git commit messages. However, this list tries to give an overview of changes relevant to users of "Tiny Webcasts".
 
 
+v.0.2.1
+=======
+
+*Bugfix release*
+
+Bug fixes:
+
+  * Handling of metadata works (again)
+  * PDF files with transparency (alpha channel) work
+  
+New features:
+
+  * Improved installer for the Windows platform
+  * Updated documentation
+  
+    * Installation described in more detail for Windows, macOS, and Linux
+    * Extended list of Frequently Asked Questions
+
+
 v.0.2.0
 =======
 
