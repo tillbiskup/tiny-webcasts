@@ -10,4 +10,4 @@ brew install sox
 brew install flac
 brew install normalize
 brew install imagemagick
-brew install pdfinfo
+brew cask install pdfinfo
