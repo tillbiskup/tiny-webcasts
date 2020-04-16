@@ -157,7 +157,7 @@ To get all the tools installed, paste the following lines right into the termina
    brew install flac
    brew install normalize
    brew install imagemagick
-   brew cask install pdfinfo
+   brew install poppler
 
 
 For convenience, the user may run the shell script ``twc-install-dependencies-macos.sh`` in the ``webcasts`` directory. Assuming you just downloaded the project from GitHub and changed into its root directory:
