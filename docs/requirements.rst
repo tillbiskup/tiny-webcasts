@@ -89,6 +89,7 @@ For Debian and similar systems (Ubuntu), it should be something in these lines f
    apt install flac
    apt install normalize
    apt install imagemagick
+   apt install poppler-utils
 
   
 For convenience, the user may run the shell script ``twc-install-dependencies-debian.sh`` in the ``webcasts`` directory. Assuming you just downloaded the project from GitHub and changed into its root directory:
@@ -155,6 +156,7 @@ To get all the tools installed, paste the following lines right into the termina
    brew install flac
    brew install normalize
    brew install imagemagick
+   brew install pdfinfo
 
 
 For convenience, the user may run the shell script ``twc-install-dependencies-macos.sh`` in the ``webcasts`` directory. Assuming you just downloaded the project from GitHub and changed into its root directory:
