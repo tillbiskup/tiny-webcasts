@@ -67,7 +67,11 @@ If that doesn't work for you, check out `these more detailed explanations on sup
 How to open a terminal/command line in macOS?
 =============================================
 
-Well, macOS users *should* know... ;-)
+There is, as always, different options, depending on your experience and personal taste. To name just a few:
+
+  * Open spotlight by pressing :kbd:`command + space` and start typing "terminal". If "Terminal" appears together with a black symbol, hit :kbd:`Return`.
+  
+  * Open the launchpad and start typing "terminal". Once the symbol with the name "Terminal" underneath is highlighted, hit :kbd:`Return`.
 
 Once you were successful, a window like the one shown in the following should appear on your screen.
 
@@ -75,7 +79,7 @@ Once you were successful, a window like the one shown in the following should ap
 .. figure:: ./images/macos-terminal.*
    :width: 100%
    
-   A macOS terminal window. Yours should look overall pretty similar.
+   A macOS terminal window. Yours should look overall pretty similar. If you have chosen a different colour scheme ("profile"), the colours may look different, though.
 
 
 There are ways to open a terminal in macOS **directly within a certain directory**. Therefore, locate the directory in a :command:`Finder` window, right-click on the directory and select "Services" > "New Terminal At Folder". If that doesn't work for you, check out `these more detailed explanations on lifehacker.com <https://lifehacker.com/launch-an-os-x-terminal-window-from-a-specific-folder-1466745514>`_.
