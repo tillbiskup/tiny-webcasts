@@ -22,9 +22,21 @@ function presentation2Jpeg() {
 	for img_file in *jpg; do
 	    img_width=`identify -format "%w" ${img_file}`
 	    if (( ${img_width} % 2 )); then
-		img_width=$((img_width-1))
-		img_height=`identify -format "%h" ${img_file}`
-		convert ${img_file} -crop ${img_width}x${img_height}+0+0 +repage ${img_file}
+			img_width=$((img_width-1))
+			img_height=`identify -format "%h" ${img_file}`
+			convert ${img_file} \
+			  -crop ${img_width}x${img_height}+0+0 +repage \
+			  ${img_file}
 	    fi
 	done
+	  
+	# Ensure that all slides are in sRGB and none in grayscale
+	# Otherwise, ffmpeg seems to get into trouble
+	# Needs to be done at the very end, as any ImageMagick call will otherwise revert
+	for slide in *.jpg; do
+	    convert \
+	      ${slide} \
+		  -depth 8 -type TrueColor \
+		  ${slide}
+	done;
 }

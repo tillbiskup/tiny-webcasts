@@ -4,6 +4,17 @@ Changelog
 A list of changes between releases. This list is not exhaustive, for details look at the git commit messages. However, this list tries to give an overview of changes relevant to users of "Tiny Webcasts".
 
 
+v.0.2.2
+=======
+
+*Bugfix release*
+
+Bug fixes:
+
+  * PDF files with mixed greyscale and colour slides work
+  * Completed dependencies for manual install
+
+
 v.0.2.1
 =======
 

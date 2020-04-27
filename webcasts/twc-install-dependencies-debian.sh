@@ -7,3 +7,4 @@ apt install sox
 apt install flac
 apt install normalize
 apt install imagemagick
+apt install poppler-utils

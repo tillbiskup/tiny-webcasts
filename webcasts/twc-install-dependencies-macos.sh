@@ -10,3 +10,4 @@ brew install sox
 brew install flac
 brew install normalize
 brew install imagemagick
+brew install poppler

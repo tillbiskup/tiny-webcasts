@@ -29,6 +29,7 @@ A number of command-line programs are used to post-process the audio files and s
   * `metaflac <https://xiph.org/flac/>`_
   * `normalize-audio <http://normalize.nongnu.org/>`_
   * `ImageMagick <https://imagemagick.org/>`_
+  * `pdfinfo <https://www.xpdfreader.com/pdfinfo-man.html>`
 
 All the programs mentioned here are free and open-source, and they are definitely available for (and tested under) both, Linux and macOS. They should, however, be available for Windows as well.
 
@@ -89,6 +90,7 @@ For Debian and similar systems (Ubuntu), it should be something in these lines f
    apt install flac
    apt install normalize
    apt install imagemagick
+   apt install poppler-utils
 
   
 For convenience, the user may run the shell script ``twc-install-dependencies-debian.sh`` in the ``webcasts`` directory. Assuming you just downloaded the project from GitHub and changed into its root directory:
@@ -155,6 +157,7 @@ To get all the tools installed, paste the following lines right into the termina
    brew install flac
    brew install normalize
    brew install imagemagick
+   brew install poppler
 
 
 For convenience, the user may run the shell script ``twc-install-dependencies-macos.sh`` in the ``webcasts`` directory. Assuming you just downloaded the project from GitHub and changed into its root directory:
